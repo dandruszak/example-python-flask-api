@@ -12,7 +12,7 @@ services:
 
 steps:
 - name: run-tests
-  dockerRun:
+  containerRun:
     image: python:3.7
     script: |
       pip install -r requirements.txt
@@ -26,7 +26,7 @@ steps:
       value: quotes.py
 
 - name: build-docker-image
-  dockerBuild:
+  containerBuild:
     dockerSecret: dockerhub
     registry: docker.io
     # TODO: change user and image name to repository that you have access to
